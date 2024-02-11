@@ -1,12 +1,17 @@
 import logo from "./assets/images/logo-universal.png";
 import "./App.css";
-import { Sidebar } from "./components/Sidebar";
+import Layout from "./components/Layout";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div id="App">
-      <Sidebar className="" />
-    </div>
+    <BrowserRouter>
+      <div id="App" className="bg-white">
+        <Routes>
+          <Route path="/" element={<Layout />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 
