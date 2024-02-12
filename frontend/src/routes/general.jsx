@@ -1,7 +1,11 @@
+import { ScrollArea } from "@radix-ui/react-scroll-area";
+
 export const General = () => {
   return (
-    <div>
-      <h1 className="bg-purple-100">General</h1>
-    </div>
+    <>
+      <ScrollArea className="flex flex-col p-5">
+        <h1 className="">General</h1>
+      </ScrollArea>
+    </>
   );
 };
