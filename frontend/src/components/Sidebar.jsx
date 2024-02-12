@@ -10,7 +10,7 @@ import {
   Mouse,
   SunMoon,
 } from "lucide-react";
-import { Outlet, Link as RouterLink } from "react-router-dom";
+import { Outlet, Link as RouterLink, useLocation } from "react-router-dom";
 <AppWindow />;
 
 export const SECTIONS = [
@@ -101,7 +101,7 @@ export const SideBarItems = () => {
         <div className="flex flex-col gap-1">
           {SECTIONS.map((section, sectionIndex) => (
             <Link
-              href={section.url}
+              href={section.url ? section.url : "/debug"}
               key={sectionIndex}
               label={section.label}
               icon={section.icon}
@@ -132,12 +132,23 @@ export const SideBarItems = () => {
 };
 
 export function Link({ href, label, icon }) {
+  const pathname = useLocation().pathname;
+  let isActive = false;
+  if (pathname?.length > 0) {
+    const splitPathname = pathname.split("/");
+    const currentPathname = splitPathname[1] ?? "";
+    isActive = currentPathname === href.split("/")[1];
+  }
+
   return (
     <Button
       variant="link"
-      className="group flex items-center justify-between rounded-lg p-2 hover:bg-gray-200"
+      className={cn(
+        "group flex items-center justify-between rounded-lg p-2",
+        isActive ? "bg-black text-white" : "hover:bg-gray-200",
+      )}
     >
-      <RouterLink to={href} className="flex items-center gap-2">
+      <RouterLink to={href}>
         <span className="flex items-center gap-2">
           {icon}
           <span className={cn("font-medium")}>{label}</span>
