@@ -5,6 +5,7 @@ import App from "./App";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Root from "./routes/root";
 import { General } from "./routes/general";
+import { Appearance } from "./routes/appearance";
 
 const container = document.getElementById("root");
 const root = createRoot(container);
@@ -19,6 +20,14 @@ const router = createBrowserRouter([
     element: (
       <Root>
         <General />
+      </Root>
+    ),
+  },
+  {
+    path: "/appearance",
+    element: (
+      <Root>
+        <Appearance />
       </Root>
     ),
   },
