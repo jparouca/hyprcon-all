@@ -80,4 +80,32 @@ const BORDER_WIKI = [
     default: "0xffffaaff",
     input: "colorpicker",
   },
+  {
+    section: "general",
+    name: "nogroup_border_active",
+    description:
+      "active border color for window that cannot be added to a group",
+    type: "gradient",
+    default: "0xffff00ff",
+    input: "colorpicker",
+  },
+  {
+    section: "general",
+    name: "resize_on_border",
+    description:
+      "enables resizing windows by clicking and dragging on borders and gaps",
+    type: "bool",
+    default: "false",
+    input: "checkbox",
+  },
+
+  {
+    section: "general",
+    name: "extend_border_grab_area",
+    description:
+      "extends the area around the border where you can click and drag on, only used when general:resize_on_border is on.",
+    type: "int",
+    default: "15",
+    input: "checkbox",
+  },
 ];

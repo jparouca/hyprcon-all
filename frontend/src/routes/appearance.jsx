@@ -4,45 +4,29 @@ import { SliderCard } from "../components/SliderCard";
 import { CheckboxCard } from "../components/CheckboxCard";
 import { ColorPicker } from "../components/ColorPicker";
 import { BorderCard } from "../components/BorderCard";
+import { ShadowCard } from "../components/ShadowCard";
+import { DimCard } from "../components/DimCard";
+import { OpacityCard } from "../components/OpacityCard";
 
 export const Appearance = () => {
   return (
     <>
       <ScrollArea className="flex flex-col p-5">
-        <BorderCard />
-        <h1 className="text-black">Appearance</h1>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-          {WIKI_GENERAL.map((field, index) => (
-            <div key={index} className="mb-4">
-              {field.input == "slider" && (
-                <div className="max-w-xs max-h-x">
-                  <SliderCard
-                    title={field.name}
-                    description={field.description}
-                    defaultValue={field.default}
-                  />
-                </div>
-              )}
-              {field.input == "checkbox" && (
-                <div className="max-w-xs">
-                  <CheckboxCard
-                    title={field.name}
-                    description={field.description}
-                    defaultValue={field.default}
-                  />
-                </div>
-              )}
-
-              <div className="max-w-xs">
-                {field.input == "colorpicker" && (
-                  <ColorPicker
-                    title={field.name}
-                    description={field.description}
-                  />
-                )}
-              </div>
-            </div>
-          ))}
+        <h1 className="text-black text-xl">Appearance</h1>
+        <div className="mb-4">
+          <BorderCard />
+        </div>
+        <div className="mb-4">
+          <ShadowCard />
+        </div>
+        <div className="mb-4">
+          <DimCard />
+        </div>
+        <div className="mb-4">
+          <OpacityCard />
+        </div>
+        <div className="mb-4">
+          <OpacityCard />
         </div>
       </ScrollArea>
     </>
