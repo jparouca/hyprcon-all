@@ -1,18 +1,17 @@
 import { ScrollArea } from "@/components/ScrollArea";
-import { WIKI_APPEARANCE as WIKI_GENERAL } from "../lib/constants";
-import { SliderCard } from "../components/SliderCard";
-import { CheckboxCard } from "../components/CheckboxCard";
-import { ColorPicker } from "../components/ColorPicker";
 import { BorderCard } from "../components/BorderCard";
 import { ShadowCard } from "../components/ShadowCard";
 import { DimCard } from "../components/DimCard";
 import { OpacityCard } from "../components/OpacityCard";
+import { Button } from "../components/ui/button";
+import { ServerCard } from "../components/ServerCard";
 
 export const Appearance = () => {
   return (
     <>
       <ScrollArea className="flex flex-col p-5">
         <h1 className="text-black text-xl">Appearance</h1>
+        <ServerCard />
         <div className="mb-4">
           <BorderCard />
         </div>

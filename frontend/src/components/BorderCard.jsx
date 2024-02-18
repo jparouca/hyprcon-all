@@ -16,12 +16,16 @@ export const BorderCard = () => {
         <CardDescription>Border settings.</CardDescription>
       </CardHeader>
       <CardContent>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4">
           {BORDER_WIKI.map((field, index) => (
             <Card className="m-1">
               <CardHeader>
-                <CardTitle>{field.name}</CardTitle>
-                <CardDescription>{field.description}</CardDescription>
+                <CardTitle>
+                  {field.input !== "checkbox" && field.name}
+                </CardTitle>
+                <CardDescription>
+                  {field.input !== "checkbox" && field.description}
+                </CardDescription>
               </CardHeader>
               <CardContent>
                 <InputWizard
